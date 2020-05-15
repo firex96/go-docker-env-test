@@ -1,0 +1,10 @@
+# Dockerfile
+FROM golang:1.14.2
+ 
+WORKDIR /app
+COPY . .
+ 
+RUN go get github.com/cespare/reflex
+ 
+EXPOSE 9999
+CMD ["reflex", "-c", "reflex.conf"]
