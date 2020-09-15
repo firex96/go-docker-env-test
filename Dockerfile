@@ -1,9 +1,12 @@
 # Dockerfile
 FROM golang:1.14.2
- 
+
 WORKDIR /app
 COPY . .
- 
+
+RUN go get -u github.com/go-chi/chi
+RUN go get -u github.com/swaggo/http-swagger
+#RUN swag init reload 제대로 하려면 정리 필요
 RUN go get github.com/cespare/reflex
 #RUN go get github.com/go-delve/delve/cmd/dlv
 
